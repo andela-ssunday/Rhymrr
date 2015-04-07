@@ -42,11 +42,17 @@
           $.getJSON(url,function(data1){
             $.getJSON(url2,function(data2){
                 rhymrr.loadrr(data1,data2);
+            }).fail(function( jqxhr, textStatus, error ) {
+                $(".rhymes .s").empty();
+                $(".rhymes .r").empty();
+               alert("Word not found");
             });             
             //rhymrr.loadrr(data);
-          }).fail(function(jqxhr) {
+          }).fail(function( jqxhr, textStatus, error ) {
+              //var err = textStatus + ", " + error;
             $(".rhymes .s").empty();
-              alert("The word doesnt exist!");
+            $(".rhymes .r").empty();
+             alert("Word not found");
           });
           
        // }
@@ -58,8 +64,9 @@
               var displayData = "";
                 displayData +="<div class='col s12'>Pronunciation: /"+(data1.pronunciation.all || data1.pronunciation)+"/</div>";
                 displayData += "<div class='section'></div>";     
-                displayData +="<div class='col s12'> "+data1.word+"("+data2.results[0].partOfSpeech+"): "+data2.results[0].definition+"</div>";
-                displayData += "<div class='section'>";
+                displayData +="<div class='col s12'> Definition: "+data1.word+"("+data2.results[0].partOfSpeech+"): "+data2.results[0].definition+"</div>";
+                displayData += "<div class='section'></div>";
+                displayData += "<div class='section'></div>";
                 displayData += "<h5>Rhymes</h5>";
                 displayData += "<div class='divider'></div>";
                 displayData += "<div class='section'>";
