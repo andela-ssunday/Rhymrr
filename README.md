@@ -76,3 +76,7 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
   - Responsive Tables support added
   - Scrollspy Plugin released
   - Waves events are now delegated / behavior enhanced
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andela-ssunday/rhymrr/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
